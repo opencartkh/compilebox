@@ -10,7 +10,7 @@ var express = require('express');
 var arr = require('./compilers');
 var sandBox = require('./DockerSandbox');
 var app = express.createServer();
-var port=process.env.;
+var port=process.env.PORT;
 
 
 var ExpressBrute = require('express-brute');
