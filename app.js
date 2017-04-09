@@ -10,7 +10,7 @@ var express = require('express');
 var arr = require('./compilers');
 var sandBox = require('./DockerSandbox');
 var app = express.createServer();
-var port=process.env.PORT;
+var port=process.env.;
 
 
 var ExpressBrute = require('express-brute');
@@ -45,8 +45,8 @@ app.post('/compile',bruteforce.prevent,function(req, res)
     var code = req.body.code;
     var stdin = req.body.stdin;
    
-    var folder= '/temp/' + random(10); //folder in which the temporary folder will be saved
-    var path="/tmp"; //current working path
+    var folder= 'temp/' + random(10); //folder in which the temporary folder will be saved
+    var path=__dirname+"/"; //current working path
     var vm_name='virtual_machine'; //name of virtual machine that we want to execute
     var timeout_value=20;//Timeout Value, In Seconds
 
