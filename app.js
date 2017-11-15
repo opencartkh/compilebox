@@ -38,26 +38,12 @@ function random(size) {
 }
 
 
-app.post('/compile', function(req, res) {
+app.post('/compile',function(req, res) 
+{
 
-    var language = (req.body || []).language;
-    var code = (req.body || []).code;
-    var stdin = (req.body || []).stdin;
-
-    if ([language, code, stdin].some((value) => value === undefined)) {
-        res.writeHead(400);
-        res.end(
-            'Missing parameter(s): ' +
-            ([
-                'language', 'code', 'stdin'
-             ])
-                .filter((param) =>
-                    (req.body || [])[param] === undefined)
-                .map(JSON.stringify)
-                .join(', '));
-        
-        return undefined;
-    }
+    var language = req.body.language;
+    var code = req.body.code;
+    var stdin = req.body.stdin;
    
     var folder= 'temp/' + random(10); //folder in which the temporary folder will be saved
     var path=__dirname+"/"; //current working path
@@ -84,5 +70,5 @@ app.get('/', function(req, res)
     res.sendfile("./index.html");
 });
 
-console.log("Listening at " + port);
+console.log("Listening at "+port)
 app.listen(port);
