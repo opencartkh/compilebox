@@ -54,8 +54,8 @@ function cleanupQueue() {
     // throw out anything more than two minutes old
     var currTime = new Date();
     for (var i = runningRequests.length - 1; i >= 0; i--) {
-	if ((currTime - runningRequests[1]) > 60000) {
-	    runningRequests.splice(i, 1)
+        if ((currTime - runningRequests[1]) > 60000) {
+            runningRequests.splice(i, 1);
         }
     } 
 }
