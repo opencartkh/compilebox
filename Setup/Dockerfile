@@ -42,8 +42,10 @@ RUN apt-get install -y oracle-java8-installer
 RUN apt-get install -y gobjc
 RUN apt-get install -y gnustep-devel &&  sed -i 's/#define BASE_NATIVE_OBJC_EXCEPTIONS     1/#define BASE_NATIVE_OBJC_EXCEPTIONS     0/g' /usr/include/GNUstep/GNUstepBase/GSConfig.h
 
+RUN apt-get -y install libjansi-native-java  libhawtjni-runtime-java libjansi-java
+RUN wget http://www.scala-lang.org/files/archive/scala-2.10.4.deb
+RUN dpkg -i scala-2.10.4.deb
 
-RUN apt-get install -y scala
 RUN apt-get install -y mysql-server
 RUN apt-get install -y perl
 
