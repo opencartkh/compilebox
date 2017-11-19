@@ -145,7 +145,7 @@ DockerSandbox.prototype.execute = function(success)
             //Displaying the checking message after 1 second interval, testing purposes only
             //console.log("Checking " + sandbox.path+sandbox.folder + ": for completion: " + myC);
 
-            myC = myC + 1;
+            myC = myC + 0.1;
 			
             fs.readFile(sandbox.path + sandbox.folder + '/completed', 'utf8', function(err, data) {
             
