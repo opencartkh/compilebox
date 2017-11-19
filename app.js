@@ -69,8 +69,8 @@ function addToQueue(req, res) {
     }
     else {
 	console.log('ignoring request');
-       res.writeHead(500);
-       res.end('queued reached max size');
+       res.writeHead(503);
+       res.end('try again later');
        return false;
     }
 }
@@ -94,8 +94,8 @@ function isQueued(req) {
 
 function runSandbox(req, res, language, code, sandboxType) {
     if (!isQueued(req)) {
-	res.writeHead(500);
-        res.end('execution timed out');
+	res.writeHead(503);
+        res.end('try again later');
 	return undefined;
     }
     if (shouldDelay(req)) {
@@ -111,7 +111,7 @@ function runSandbox(req, res, language, code, sandboxType) {
     }
 }
 
-app.post('/compile', function(req, res) {
+app.post('/compile', bruteforce.prevent, function(req, res) {
     var language = (req.body || []).language;
     var code = (req.body || []).code;
     var stdin = (req.body || []).stdin;
