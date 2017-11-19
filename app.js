@@ -112,12 +112,6 @@ function runSandbox(req, res, language, code, sandboxType) {
 }
 
 app.post('/compile', function(req, res) {
-	console.log('compiling');
-    var added = addToQueue(req, res);
-    if (!added) {
-	return;
-    }
-    console.log('added to queue')
     var language = (req.body || []).language;
     var code = (req.body || []).code;
     var stdin = (req.body || []).stdin;
@@ -135,6 +129,11 @@ app.post('/compile', function(req, res) {
                 .join(', '));
         
         return undefined;
+    }
+
+    var added = addToQueue(req, res);
+    if (!added) {
+	return;
     }
 
     var folder= 'temp/' + random(10); //folder in which the temporary folder will be saved
