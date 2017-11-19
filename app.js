@@ -69,7 +69,7 @@ function addToQueue(req, res) {
     }
     else {
 	console.log('ignoring request');
-       res.writeHead(500);
+       res.writeHead(503);
        res.end('queued reached max size');
        return false;
     }
@@ -94,7 +94,7 @@ function isQueued(req) {
 
 function runSandbox(req, res, language, code, sandboxType) {
     if (!isQueued(req)) {
-	res.writeHead(500);
+	res.writeHead(503);
         res.end('execution timed out');
 	return undefined;
     }
@@ -151,7 +151,7 @@ app.get('/health', function(req, res)
 {
     cleanupQueue()
     if (runningRequests.length >= MAX_QUEUE_SIZE) {
-	res.writeHead(500);
+	res.writeHead(503);
         res.end('queued reached max size')
     }
     else {
