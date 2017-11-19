@@ -85,7 +85,7 @@ function removeFromQueue(req) {
 
 function isQueued(req) {
 	for (var i = 0; i < runningRequests.length; i++) {
-	    if (runningRequests[i][0] == req) {
+	    if (runningRequests[i][0] == req && (((new Date()) - runningRequests[i][1]) < 60000)) {
 		return true;
 	    }
 	}
