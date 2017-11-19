@@ -217,7 +217,7 @@ DockerSandbox.prototype.execute = function(success)
             
             clearInterval(intid);
         });
-    }, 1000);
+    }, 100);
 
 }
 
