@@ -105,8 +105,8 @@ function runSandbox(req, res, language, code, sandboxType) {
 	sandboxType.run(function(data,exec_time,err)
 			{
 			    //console.log("Data: received: "+ data)
-			    res.send({output:data, langid: language,code:code, errors:err, time:exec_time});
                             removeFromQueue(req); 
+			    res.send({output:data, langid: language,code:code, errors:err, time:exec_time});
 			});
     }
 }
