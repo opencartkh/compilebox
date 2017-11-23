@@ -149,14 +149,16 @@ app.post('/compile', function(req, res) {
 
 app.get('/health', function(req, res) 
 {
-    var exec = require('child_process').exec;
-    exec("docker rm `docker ps -aq -f status=exited`")
     cleanupQueue()
     if (runningRequests.length >= MAX_QUEUE_SIZE) {
 	res.writeHead(503);
         res.end('queued reached max size')
     }
     else {
+        if (runningRequests.length == 0) {
+	    var exec = require('child_process').exec;
+	    exec("docker rm `docker ps -aq -f status=exited`")
+        }
 	res.writeHead(200);
         res.end('healthy');
     }
