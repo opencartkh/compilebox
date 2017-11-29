@@ -119,6 +119,8 @@ app.post('/compile', function(req, res) {
     var code = (req.body || []).code;
     var stdin = (req.body || []).stdin;
 
+    throw new Error('error!');
+
     if ([language, code, stdin].some((value) => value === undefined)) {
         res.writeHead(400);
         res.end(
