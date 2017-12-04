@@ -102,15 +102,12 @@ function runSandbox(req, res, language, code, sandboxType) {
 	setTimeout(function() { runSandbox(req, res, language, code, sandboxType); }, 100);
     }
     else {
-	sandboxType.run(function(data,exec_time,err)
-			{
-			    if (data && data.length > 1000000) {
-				data = data.substring(0,1000000);
-                            }
-			    //console.log("Data: received: "+ data)
+	sandboxType.run(function(data,exec_time,err) {
                 removeFromQueue(req); 
                 if (data.length > 1000000) {
-                    data = data.substring(0, 1000000);
+		    res.writeHead(400);
+                    res.end('Output Exceeds Memory Limit');
+                    return;
                 }
 			    res.send({output:data, langid: language,code:code, errors:err, time:exec_time});
 			});
@@ -121,6 +118,7 @@ app.post('/compile', function(req, res) {
     var language = (req.body || []).language;
     var code = (req.body || []).code;
     var stdin = (req.body || []).stdin;
+    var timeout_value = Math.min(60, parseInt((req.body || []).timeout) || 10);
 
     if ([language, code, stdin].some((value) => value === undefined)) {
         res.writeHead(400);
@@ -145,7 +143,6 @@ app.post('/compile', function(req, res) {
     var folder= 'temp/' + random(10); //folder in which the temporary folder will be saved
     var path=__dirname+"/"; //current working path
     var vm_name='virtual_machine'; //name of virtual machine that we want to execute
-    var timeout_value=20;//Timeout Value, In Seconds
 
     //details of this are present in DockerSandbox.js
     var sandboxType = new sandBox(timeout_value,path,folder,vm_name,arr.compilerArray[language][0],arr.compilerArray[language][1],code,arr.compilerArray[language][2],arr.compilerArray[language][3],arr.compilerArray[language][4],stdin);
