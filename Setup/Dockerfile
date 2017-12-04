@@ -14,7 +14,7 @@ RUN apt-get update
 RUN apt-get install -y gcc
 RUN apt-get install -y g++
 RUN apt-get install -y php5-cli
-RUN apt-get install -y ruby
+RUN apt-get install -y ruby2.0
 RUN apt-get install -y python
 RUN apt-get install -y mono-xsp2 mono-xsp2-base
 
