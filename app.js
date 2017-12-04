@@ -108,7 +108,10 @@ function runSandbox(req, res, language, code, sandboxType) {
 				data = data.substring(0,1000000);
                             }
 			    //console.log("Data: received: "+ data)
-                            removeFromQueue(req); 
+                removeFromQueue(req); 
+                if (data.length > 1000000) {
+                    data = data.substring(0, 1000000);
+                }
 			    res.send({output:data, langid: language,code:code, errors:err, time:exec_time});
 			});
     }

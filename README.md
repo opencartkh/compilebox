@@ -13,6 +13,51 @@ The client-side app submits the code and the languageID to the server through th
 
 No two codes have access to each other’s *Docker* or files.
 
+## Updating AWS ##
+
+In order to make starting up instances on autoscaling events faster, we do most of the work of setting up an instance in advance, by making an Amazon Machine Image (AMI) that contains all of the necessary software. In order to build an AMI from scratch, we take the following steps:
+
+1. Find the latest default AMI being used for Elastic Beanstallk Node JS. You can find this by going to the EC2 dashboard in the AWS web console, clicking on Amazon Machine Images, switching to "Public" and searching for nodejs-hvm. Choose the one with the latest date and start up a new instance (t2.large) based on that AMI. Not that it is import to select an HVM instance and not a paravirtualization instance, in order to be able to use all instance types.
+
+2. Once the new instance starts up, we can begin installing software. Start by setting up the epel yum repository:
+
+sudo yum-config-manager --enable epel
+sudo yum repolist
+
+3. Install docker. Be sure NOT to install docker-io, which is an old version and very slow.
+
+sudo yum install docker
+
+4. There are multiple storage drivers available in Docker. For performance reasons, we want to use the overlay2 file system. To do so, we need to edit /etc/sysconfig/docker-storage and add the line:
+
+DOCKER_STORAGE_OPTIONS="--storage-driver overlay2"
+
+5. Docker should now be installed and ready to be started:
+
+sudo service docker restart
+
+6. Change the permissions on the docker socket file:
+
+sudo chmod 777 /var/run/docker.sock
+
+7. Check that docker installed correctly, by making sure this command doesn't give an error:
+
+docker images
+
+8. We are now ready to set up the Docker container that we will be using. From the Setup directory of the git repo, copy and paste the contents of Dockerfile to the instance. Optionally, make changes to the Dockerfile to add new packages or change software configuration. Then run this command to build the container (this may take 10-15 mins)
+
+docker build -t 'virtual_machine' - < Dockerfile
+
+
+9. Make sure the docker image was created correctly by checking the output of this command:
+
+docker images
+
+10. The instance should now be set up correctly. You can create a new AMI of this instance by going to EC2, selecting the instance, right clicking, and choosing the option to create a snapshot AMI. You may want to change the default disk space to 20GB to be safe, though that isn't mandatory. The AMI creation may take 10-15 mins. You can see the status in the AMI tab. When it is complete, note down the AMI id, e.g. ami-5g29g12
+
+11. Change the default AMI used by Elastic Beanstalk in the environment's configuration in the EB web console. It will take a few minutes to start up. Verify everything is working by sending some test requests using the compilebox demo interface.
+
+
 
 ## Installation Instructions ##
 
