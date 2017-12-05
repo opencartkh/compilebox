@@ -17,7 +17,7 @@
 */
 
 exports.compilerArray= [ ["python","file.py","","Python",""],
-			 ["\'ruby2.0 -ractive_support -r active_support/core_ext\'","file.rb","","Ruby",""],
+			 ["\'ruby -ractive_support -r active_support/core_ext\'","file.rb","","Ruby",""],
 			 ["clojure","file.clj","","Clojure",""],
 			 ["php","file.php","","Php",""],
 			 ["nodejs","file.js","","Nodejs",""],
