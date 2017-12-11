@@ -58,5 +58,9 @@ RUN mkdir -p /opt/rust && \
     curl https://sh.rustup.rs -sSf | HOME=/opt/rust sh -s -- --no-modify-path -y && \
     chmod -R 777 /opt/rust
 
+RUN apt-get install -y clang libicu-dev git cmake ninja-build python uuid-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
+RUN mkdir -p /opt/swift && chmod -R 777 /opt/swift
+RUN cd /opt/swift && wget https://swift.org/builds/swift-4.0.3-release/ubuntu1404/swift-4.0.3-RELEASE/swift-4.0.3-RELEASE-ubuntu14.04.tar.gz && tar xzf swift-4.0.3-RELEASE-ubuntu14.04.tar.gz
+
 RUN echo "mysql ALL = NOPASSWD: /usr/sbin/service mysql start" | cat >> /etc/sudoers
 
