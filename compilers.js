@@ -32,5 +32,5 @@ exports.compilerArray= [ ["python","file.py","","Python",""],
 			 ["/usercode/sql_runner.sh","file.sql","","MYSQL",""],
 			 ["perl","file.pl","","Perl",""],
 			 ["\'env HOME=/opt/rust /opt/rust/.cargo/bin/rustc\'","file.rs","/usercode/a.out","Rust","\'-o /usercode/a.out\'"],
-                         ["/opt/swift/swift-4.0.3-RELEASE-ubuntu14.04/usr/bin/swiftc","file.swift","/usercode/file","Swift",""] ];
+                         ["/opt/swift/swift-4.0.3-RELEASE-ubuntu14.04/usr/bin/swiftc","file.swift","/usercode/a.out","Swift","\'-o /usercode/a.out\'"] ];
 
