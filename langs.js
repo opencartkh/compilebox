@@ -16,7 +16,8 @@ var LANGS = {
     "MySQL": [13,"text/x-sql"],
     "Perl": [14, "text/x-perl"],
     "Rust": [15, "text/rust"],
-    "Swift": [16, "text-swift"],
+    "Swift": [16, "text/swift"],
+    "R": [17, "text/r"],
 }
 
 
@@ -39,5 +40,6 @@ var Codes = {
     "VB.NET": "Imports System\n\nPublic Class Test\n\tPublic Shared Sub Main() \n    \tSystem.Console.WriteLine(\"Hello\")\n\tEnd Sub\nEnd Class",
     "Rust": "fn main() {\n\tprintln!(\"Hello\");\n}",
     "Swift": "print(\"Hello, world!\")",
+    "R": "print(\"Hello World, from R!\")",
 }
 
