@@ -67,7 +67,7 @@ fi
 #touch /usercode/completed
 END=$(date +%s.%2N)
 runtime=$(echo "$END - $START" | bc)
-memory=$(grep -E "Maximum resident set size \(kbytes\): " /usercode/timing |grep -oEi '[0-9]+')
+memory=$(grep -E "Maximum resident set size \(kbytes\): " /usercode/timing 2> /dev/null |grep -oEi '[0-9]+' 2> /dev/null)
 
 echo "*-COMPILEBOX::ENDOFOUTPUT-*" $runtime $memory
 
