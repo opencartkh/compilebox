@@ -45,20 +45,20 @@ exec  2> $"/usercode/errors"
 START=$(date +%s.%2N)
 #Branch 1
 if [ "$output" = "" ]; then
-    /usr/bin/time -v $compiler /usercode/$file -< $"/usercode/inputFile" #| tee /usercode/output.txt
+    /usr/bin/time -v -o /usercode/timing $compiler /usercode/$file -< $"/usercode/inputFile" #| tee /usercode/output.txt
 #Branch 2
 else
-	#In case of compile errors, redirect them to a file
-        /usr/bin/time -v $compiler /usercode/$file $addtionalArg #&> /usercode/errors.txt
+    #In case of compile errors, redirect them to a file
+        $compiler /usercode/$file $addtionalArg #&> /usercode/errors.txt
 	#Branch 2a
-	if [ $? -eq 0 ];	then
-		$output -< $"/usercode/inputFile" #| tee /usercode/output.txt    
-	#Branch 2b
-	else
-	    echo "Compilation Failed"
-	    #if compilation fails, display the output file	
-	    #cat /usercode/errors.txt
-	fi
+	if [ $? -eq 0 ];then
+	    /usr/bin/time -v -o /usercode/timing $output -< $"/usercode/inputFile" #| tee /usercode/output.txt    
+	    #Branch 2b
+	    else
+	        echo "Compilation Failed"
+		    #if compilation fails, display the output file
+		    #cat /usercode/errors.txt
+		fi
 fi
 
 #exec 1>&3 2>&4
@@ -67,9 +67,9 @@ fi
 #touch /usercode/completed
 END=$(date +%s.%2N)
 runtime=$(echo "$END - $START" | bc)
+memory=$(grep -E "Maximum resident set size \(kbytes\): " /usercode/timing |grep -oEi '[0-9]+')
 
-
-echo "*-COMPILEBOX::ENDOFOUTPUT-*" $runtime 
+echo "*-COMPILEBOX::ENDOFOUTPUT-*" $runtime $memory
 
 
 mv /usercode/logfile.txt /usercode/completed
