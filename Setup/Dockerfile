@@ -61,6 +61,7 @@ RUN mkdir -p /opt/rust && \
 RUN apt-get install -y clang libicu-dev git cmake ninja-build python uuid-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
 RUN mkdir -p /opt/swift && chmod -R 777 /opt/swift
 RUN cd /opt/swift && wget https://swift.org/builds/swift-4.0.3-release/ubuntu1404/swift-4.0.3-RELEASE/swift-4.0.3-RELEASE-ubuntu14.04.tar.gz && tar xzf swift-4.0.3-RELEASE-ubuntu14.04.tar.gz
+RUN chmod -R 777 /opt/swift
 
 RUN apt-get install -y python-numpy python-scipy python-pandas
 RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
