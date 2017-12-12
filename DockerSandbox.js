@@ -171,8 +171,8 @@ DockerSandbox.prototype.execute = function(success)
 
 			var lines = data.toString().split('*-COMPILEBOX::ENDOFOUTPUT-*')
 			data=lines[0]
-				       var time=lines[1].trim().split[0]
-				       var memory = lines[1].trim().split[1]
+				       var time=lines[1].trim().split(" ")[0]
+				       var memory = lines[1].trim().split(" ")[1]
 
 			console.log("Time: ")
 			console.log(time)
@@ -181,7 +181,7 @@ DockerSandbox.prototype.execute = function(success)
                                        console.log(memory)
 
 
-       	           	success(data,time,data2)
+				       success(data,time,memory,data2)
                 });
 
                 //return the data to the calling functoin

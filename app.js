@@ -102,14 +102,14 @@ function runSandbox(req, res, language, code, sandboxType) {
 	setTimeout(function() { runSandbox(req, res, language, code, sandboxType); }, 100);
     }
     else {
-	sandboxType.run(function(data,exec_time,err) {
+	sandboxType.run(function(data,exec_time,exec_memory,err) {
                 removeFromQueue(req); 
                 if (data.length > 1000000) {
 		    res.writeHead(400);
                     res.end('Output Exceeds Memory Limit');
                     return;
                 }
-			    res.send({output:data, langid: language,code:code, errors:err, time:exec_time});
+		res.send({output:data, langid: language,code:code, errors:err, time:exec_time, memory:exec_memory});
 			});
     }
 }
