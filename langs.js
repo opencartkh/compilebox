@@ -18,6 +18,7 @@ var LANGS = {
     "Rust": [15, "text/rust"],
     "Swift": [16, "text/swift"],
     "R": [17, "text/r"],
+    "Python3": [18, "text/x-python3"],
 }
 
 
@@ -33,6 +34,7 @@ var Codes = {
     "Plain JavaScript": "//Not happy with Plain JS? Use JS/HTML/CSS option for using your own libraries.\n\nconsole.log(\"Hello\");",
     "PHP": "<?php\n$ho = fopen('php://stdout', \"w\");\n\nfwrite($ho, \"Hello\");\n\n\nfclose($ho);\n",
     "Python": "print \"Hello\"",
+    "Python3": "print \"Hello\"",
     "Ruby": "puts \"Hello\"",
     "Bash": "echo 'Hi' ",
     "Objective-C": "#include <Foundation/Foundation.h>\n\n@interface Test\n+ (const char *) classStringValue;\n@end\n\n@implementation Test\n+ (const char *) classStringValue;\n{\n    return \"Hey!\";\n}\n@end\n\nint main(void)\n{\n    printf(\"%s\\n\", [Test classStringValue]);\n    return 0;\n}",

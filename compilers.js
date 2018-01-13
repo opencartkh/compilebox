@@ -34,5 +34,6 @@ exports.compilerArray= [ ["python","file.py","","Python",""],
 			 ["\'env HOME=/opt/rust /opt/rust/.cargo/bin/rustc\'","file.rs","/usercode/a.out","Rust","\'-o /usercode/a.out\'"],
                          ["/opt/swift/swift-4.0.3-RELEASE-ubuntu14.04/usr/bin/swiftc","file.swift","/usercode/a.out","Swift","\'-o /usercode/a.out\'"],
                          ["Rscript","file.r","","R",""],
+			 ["python3","file.py","","Python3",""],
 			 ];
 

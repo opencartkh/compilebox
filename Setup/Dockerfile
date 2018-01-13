@@ -68,5 +68,7 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sour
 RUN apt-get update
 RUN apt-get install -y --force-yes r-base
 
+RUN apt-get install -y python3-numpy python3-scipy python3-pandas
+
 RUN echo "mysql ALL = NOPASSWD: /usr/sbin/service mysql start" | cat >> /etc/sudoers
 
