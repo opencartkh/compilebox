@@ -1,5 +1,5 @@
 
-var LANGS = {
+const LANGS = {
     "C#": [10, "text/x-csharp"],
     "C/C++": [7, "text/x-c++src"],
     "Clojure": [2, "text/x-clojure"],
@@ -19,11 +19,35 @@ var LANGS = {
     "Swift": [16, "text/swift"],
     "R": [17, "text/r"],
     "Python3": [18, "text/x-python3"],
-}
+    "Ada": [19, "text/x-adasrc"],
+    "Algol": [20, "text/x-algol"],
+    "Cobol": [21, "text/x-cobol"],
+    "Coffeescript": [22, "application/vnd.coffeescript"],
+    "Commonlisp": [23, "text/x-lisp"],
+    "D": [24, "text/x-dlang"],
+    "Elixir": [25, "text/x-elixir"],
+    "Erlang": [26, "text/x-erlang"],
+    "F#": [27, "text/x-fsharp"],
+    "Fortran": [28, "text/x-fortran"],
+    "Groovy": [29, "text/x-groovy"],
+    "Hack": [30, "text/x-hack"],
+    "Haskell": [31, "text/x-haskell"],
+    "Julia": [32, "text/x-julia"],
+    "Kotlin": [33, "text/x-kotlin"],
+    "Logo": [34, "text/x-logo"],
+    "Lua": [35, "text/x-lua"],
+    "Luna": [36, "text/x-luna"],
+    "Ocaml": [37, "text/x-ocaml"],
+    "Octave": [38, "text/x-octave"],
+    "Opal": [39, "text/x-opal"],
+    "Pascal": [40, "text/x-pascal"],
+    "Prolog": [41, "text/x-prolog"],
+    "Racket": [42, "text/x-racket"],
+    "Smalltalk": [43, "text/x-smalltalk"],
+    "Tcl": [44, "text/x-tcl"],
+};
 
-
-
-var Codes = {
+const Codes = {
     "Perl" : "use strict;\nuse warnings\n;use v5.14; say 'Hello';",
     "MySQL":"create table myTable(name varchar(10));\ninsert into myTable values(\"Hello\");\nselect * from myTable;",
     "Java": "/* package whatever; // don't place package name! */\n\nimport java.io.*;\n\nclass myCode\n{\n\tpublic static void main (String[] args) throws java.lang.Exception\n\t{\n\t\t\n\t\tSystem.out.println(\"Hello\");\n\t}\n}",
@@ -43,5 +67,30 @@ var Codes = {
     "Rust": "fn main() {\n\tprintln!(\"Hello\");\n}",
     "Swift": "print(\"Hello, world!\")",
     "R": "print(\"Hello World, from R!\")",
-}
-
+    "Ada": "",
+    "Algol": "",
+    "Cobol": "",
+    "Coffeescript": "",
+    "Commonlisp": "",
+    "D": "",
+    "Elixir": "",
+    "Erlang": "",
+    "F#": "",
+    "Fortran": "",
+    "Groovy": "",
+    "Hack": "",
+    "Haskell": "",
+    "Julia": "",
+    "Kotlin": "",
+    "Logo": "",
+    "Lua": "",
+    "Luna": "",
+    "Ocaml": "",
+    "Octave": "",
+    "Opal": "",
+    "Pascal": "",
+    "Prolog": "",
+    "Racket": "",
+    "Smalltalk": "",
+    "Tcl": "",
+};

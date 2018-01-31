@@ -85,7 +85,7 @@ RUN npm install -g coffee-script
 RUN npm install -g naheui
 RUN apt-get install -y algol68g
 RUN apt-get install -y clisp
-RUN apt-get install -y gdc
+RUN apt-get install -y gdc # d language, also installed below, just in case
 RUN apt-get install -y emacs
 RUN apt-get install -y gfortran
 RUN apt-get install -y fsharp
