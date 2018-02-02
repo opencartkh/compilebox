@@ -43,7 +43,7 @@ exports.compilerArray = [
     ["coffee", "file.coffee", "", "CoffeeScript", ""], // done
     ["clisp", "file.lisp", "", "Common Lisp", ""], // done
     ["\'gdc -o /usercode/a.out\'", "file.d", "/usercode/a.out", "D", ""], // done
-    // dart
+    ["dart", "file.dart", "", "Dart", ""], // done
     ["emacs --script", "file.lisp", "", "Emacslisp", ""], // done
     ["elixir", "file.exs", "", "Elixir", ""], // todo
     ["erlang", "file.erl", "", "Erlang", ""], // todo
