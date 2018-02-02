@@ -1,9 +1,12 @@
 ada
 algol
+brainfuck
 cobol
 coffeescript
-commonlisp
+clisp
 d
+dart
+emacslisp
 elixir
 erlang
 fsharp
@@ -16,14 +19,17 @@ kotlin
 logo
 lua
 luna
+nim
 ocaml
 octave
 opal
 pascal
 prolog
+pypy
 racket
 smalltalk
 tcl
+typescript
 
 postgresql
 mysql

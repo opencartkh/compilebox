@@ -16,12 +16,12 @@
 	*Revised on: 30th June 2014 (Added Column number 4 to display the name of languages to console)
 */
 
-exports.compilerArray= [
+exports.compilerArray = [
     ["python","file.py","","Python",""],
     ["\'ruby -ractive_support -r active_support/core_ext\'","file.rb","","Ruby",""],
     ["clojure","file.clj","","Clojure",""],
     ["php","file.php","","Php",""],
-    ["nodejs","file.js","","Nodejs",""],
+    ["\'/usr/bin/env node\'","file.js","","Node.js",""],
     ["scala","file.scala","","Scala",""],
     ["\'go run\'","file.go","","Go",""],
     ["\'g++ -std=c++11 -o /usercode/a.out\' ","file.cpp","/usercode/a.out","C/C++",""],
@@ -36,30 +36,37 @@ exports.compilerArray= [
     ["/opt/swift/swift-4.0.3-RELEASE-ubuntu14.04/usr/bin/swiftc","file.swift","/usercode/a.out","Swift","\'-o /usercode/a.out\'"],
     ["Rscript","file.r","","R",""],
     ["python3","file.py","","Python3",""],
-    ["ada", "file.ada", "", "Ada", ""],
-    ["algol", "file.algol", "", "Algol", ""],
-    ["cobol", "file.cob", "", "Cobol", ""],
-    ["coffeescript", "file.coffee", "", "Coffeescript", ""],
-    ["commonlisp", "file.lisp", "", "Commonlisp", ""],
-    ["d", "file.d", "", "D", ""],
-    ["elixir", "file.ex", "", "Elixir", ""],
-    ["erlang", "file.erl", "", "Erlang", ""],
-    ["f#", "file.fs", "", "F#", ""],
-    ["fortran", "file.f", "", "Fortran", ""],
-    ["groovy", "file.groovy", "", "Groovy", ""],
-    ["hack", "file.php", "", "Hack", ""],
-    ["haskell", "file.hs", "", "Haskell", ""],
-    ["julia", "file.jl", "", "Julia", ""],
-    ["kotlin", "file.kt", "", "Kotlin", ""],
-    ["logo", "file.logo", "", "Logo", ""],
-    ["lua", "file.lua", "", "Lua", ""],
-    ["luna", "file.luna", "", "Luna", ""],
-    ["ocaml", "file.ml", "", "Ocaml", ""],
-    ["octave", "file.m", "", "Octave", ""],
-    ["opal", "file.opal", "", "Opal", ""],
-    ["pascal", "file.pas", "", "Pascal", ""],
+    ["\'gnat make\'", "main.adb", "./main", "Ada", ""], // done
+    ["a68g", "file.algol", "", "Algol", ""], // done
+    ["bf", "file.bf", "", "Brainfuck", ""], // done
+    ["\'cobc -x\'", "file.cob", "", "Cobol", ""], // done
+    ["coffee", "file.coffee", "", "CoffeeScript", ""], // done
+    ["clisp", "file.lisp", "", "Common Lisp", ""], // done
+    ["\'gdc -o /usercode/a.out\'", "file.d", "/usercode/a.out", "D", ""], // done
+    // dart
+    ["emacs --script", "file.lisp", "", "Emacslisp", ""], // done
+    ["elixir", "file.exs", "", "Elixir", ""], // todo
+    ["erlang", "file.erl", "", "Erlang", ""], // todo
+    // F# support an interpreted mode with fsharpi
+    ["f#", "file.fs", "", "F#", ""], // todo
+    ["f95", "file.f", "./file", "Fortran", ""], // done
+    ["groovy", "file.groovy", "", "Groovy", ""], // done
+    ["hhvm", "file.php", "", "Hack", ""], // todo
+    ["ghci", "file.hs", "", "Haskell", ""], // todo
+    ["julia", "file.jl", "", "Julia", ""], // done
+    ["/root/.sdkman/candidates/kotlin/current/bin/kotlinc-jvm -src main.kt -jar main.jar", "main.kt", 'java -cp "kotlinc/lib/*:main.jar" namespace', "Kotlin", ""],     // kotlinc is a repl
+    ["logo", "file.logo", "", "Logo", ""], // todo
+    ["lua", "file.lua", "", "Lua", ""], // done
+    ["luna", "file.luna", "", "Luna", ""], // todo
+    ["\'nim compile\'", "file.nim", "./file", "Nim", ""], // done
+    ["ocaml", "file.ml", "", "Ocaml", ""], // todo
+    ["octave", "file.m", "", "Octave", ""], // done
+    ["opal", "file.opal", "", "Opal", ""], // todo
+    ["pc", "file.pas", "./file", "Pascal", ""], // done
     ["prolog", "file.prolog", "", "Prolog", ""],
-    ["racket", "file.rkt", "", "Racket", ""],
-    ["smalltalk", "file.st", "", "Smalltalk", ""],
-    ["tcl", "file.tcl", "", "Tcl", ""],
+    // pypy
+    ["racket --script", "file.rkt", "", "Racket", ""], // done
+    ["gst", "file.st", "", "Smalltalk", ""], // done
+    ["tclsh", "file.tcl", "", "Tcl", ""], // done
+    ["tsc", "file.ts", "node file.js", "TypeScript", ""], // done
 ];
