@@ -59,12 +59,12 @@ exports.compilerArray = [
     ["lua", "file.lua", "", "Lua", ""], // done
     ["luna", "file.luna", "", "Luna", ""], // todo
     ["\'nim compile\'", "file.nim", "/usercode/file", "Nim", ""], // done
-    ["ocaml", "file.ml", "", "Ocaml", ""], // todo
+    ["ocaml", "file.ml", "", "Ocaml", ""], // done
     ["octave", "file.m", "", "Octave", ""], // done
     ["opal", "file.opal", "", "Opal", ""], // todo
     ["pc", "file.pas", "/usercode/file", "Pascal", ""], // done
     ["prolog", "file.prolog", "", "Prolog", ""],
-    // pypy
+    ["pypy", "file.py", "", "PyPy", ""],
     ["racket --script", "file.rkt", "", "Racket", ""], // done
     ["gst", "file.st", "", "Smalltalk", ""], // done
     ["tclsh", "file.tcl", "", "Tcl", ""], // done

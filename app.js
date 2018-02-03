@@ -15,9 +15,9 @@ var port=process.env.PORT || 3000;
 
 var ExpressBrute = require('express-brute');
 var store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
-var bruteforce = new ExpressBrute(store,{
+var bruteforce = new ExpressBrute(store, {
     freeRetries: 50,
-    lifetime: 3600
+    lifetime: 3600,
 });
 
 app.use(express.static(__dirname));
