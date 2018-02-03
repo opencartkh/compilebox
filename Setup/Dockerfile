@@ -8,12 +8,13 @@ MAINTAINER ASAD MEMON, OSMAN ALI
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get install time
-
 # Update the repository sources list
 # RUN echo "deb http://us-east-1.ec2.archive.ubuntu.com/ubuntu artful main universe" > /etc/apt/sources.list
 RUN apt-get update
 #RUN apt-get upgrade
+
+RUN apt-get install time
+
 # Install all the languages/compilers we are supporting.
 RUN apt-get install -y gcc
 RUN apt-get install -y g++
@@ -134,6 +135,24 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # "Long form" languages:
 
+# Dart
+# https://www.dartlang.org/install/linux
+
+RUN apt-get update
+RUN apt-get install apt-transport-https
+RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list
+RUN apt-get update
+RUN apt-get install dart
+
+# Haskell
+
+RUN apt-get install -y ghc
+RUN apt-get install -y ghc-doc
+RUN apt-get install -y ghc-prof
+RUN apt-get install -y cabal-install
+RUN cabal update
+
 # Kotlin, Groovy
 # https://hub.docker.com/r/rayyildiz/kotlin/~/dockerfile/
 
@@ -224,13 +243,3 @@ RUN \
 # TypeScript
 
 RUN npm install -g typescript
-
-# Dart
-# https://www.dartlang.org/install/linux
-
-RUN apt-get update
-RUN apt-get install apt-transport-https
-RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-RUN curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list
-RUN apt-get update
-RUN apt-get install dart
