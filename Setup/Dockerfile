@@ -8,6 +8,8 @@ MAINTAINER ASAD MEMON, OSMAN ALI
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN apt-get install time
+
 # Update the repository sources list
 # RUN echo "deb http://us-east-1.ec2.archive.ubuntu.com/ubuntu artful main universe" > /etc/apt/sources.list
 RUN apt-get update
@@ -77,7 +79,7 @@ RUN mkdir -p /opt/rust && \
 
 RUN apt-get install -y clang libicu-dev git cmake ninja-build python uuid-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
 RUN mkdir -p /opt/swift && chmod -R 777 /opt/swift
-RUN cd /opt/swift && wget https://swift.org/builds/swift-4.0.3-release/ubuntu1404/swift-4.0.3-RELEASE/swift-4.0.3-RELEASE-ubuntu14.04.tar.gz && tar xzf swift-4.0.3-RELEASE-ubuntu14.04.tar.gz
+RUN cd /opt/swift && wget https://swift.org/builds/swift-4.0.3-release/ubuntu1610/swift-4.0.3-RELEASE/swift-4.0.3-RELEASE-ubuntu16.10.tar.gz && tar xzf swift-4.0.3-RELEASE-ubuntu16.10.tar.gz
 RUN chmod -R 777 /opt/swift
 
 RUN apt-get install -y python-numpy python-scipy python-pandas
@@ -232,5 +234,3 @@ RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list
 RUN apt-get update
 RUN apt-get install dart
-
-RUN apt-get install time
