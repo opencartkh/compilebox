@@ -27,7 +27,7 @@ exports.compilerArray = [
     ["\'g++ -std=c++11 -o /usercode/a.out\' ","file.cpp","/usercode/a.out","C/C++",""],
     ["javac","file.java","\'./usercode/javaRunner.sh\'","Java",""],
     ["\'vbnc -nologo -quiet\'","file.vb","\'mono /usercode/file.exe\'","VB.Net",""],
-    ["gmcs","file.cs","\'mono /usercode/file.exe\'","C#",""],
+    ["mcs","file.cs","\'mono /usercode/file.exe\'","C#",""],
     ["/bin/bash","file.sh"," ","Bash",""],
     ["gcc ","file.m"," /usercode/a.out","Objective-C","\' -o /usercode/a.out -I/usr/include/GNUstep -L/usr/lib/GNUstep -lobjc -lgnustep-base -Wall -fconstant-string-class=NSConstantString\'"],
     ["/usercode/sql_runner.sh","file.sql","","MYSQL",""],
@@ -36,7 +36,7 @@ exports.compilerArray = [
     ["/opt/swift/swift-4.0.3-RELEASE-ubuntu14.04/usr/bin/swiftc","file.swift","/usercode/a.out","Swift","\'-o /usercode/a.out\'"],
     ["Rscript","file.r","","R",""],
     ["python3","file.py","","Python3",""],
-    ["\'gnat make\'", "main.adb", "./main", "Ada", ""], // done
+    ["\'gnat make\'", "main.adb", "/usercode/main", "Ada", ""], // done
     ["a68g", "file.algol", "", "Algol", ""], // done
     ["bf", "file.bf", "", "Brainfuck", ""], // done
     ["\'cobc -x\'", "file.cob", "", "Cobol", ""], // done
@@ -49,7 +49,7 @@ exports.compilerArray = [
     ["erlang", "file.erl", "", "Erlang", ""], // todo
     // F# support an interpreted mode with fsharpi
     ["f#", "file.fs", "", "F#", ""], // todo
-    ["f95", "file.f", "./file", "Fortran", ""], // done
+    ["f95", "file.f", "/usercode/file", "Fortran", ""], // done
     ["groovy", "file.groovy", "", "Groovy", ""], // done
     ["hhvm", "file.php", "", "Hack", ""], // todo
     ["ghci", "file.hs", "", "Haskell", ""], // todo
@@ -58,11 +58,11 @@ exports.compilerArray = [
     ["logo", "file.logo", "", "Logo", ""], // todo
     ["lua", "file.lua", "", "Lua", ""], // done
     ["luna", "file.luna", "", "Luna", ""], // todo
-    ["\'nim compile\'", "file.nim", "./file", "Nim", ""], // done
+    ["\'nim compile\'", "file.nim", "/usercode/file", "Nim", ""], // done
     ["ocaml", "file.ml", "", "Ocaml", ""], // todo
     ["octave", "file.m", "", "Octave", ""], // done
     ["opal", "file.opal", "", "Opal", ""], // todo
-    ["pc", "file.pas", "./file", "Pascal", ""], // done
+    ["pc", "file.pas", "/usercode/file", "Pascal", ""], // done
     ["prolog", "file.prolog", "", "Prolog", ""],
     // pypy
     ["racket --script", "file.rkt", "", "Racket", ""], // done
