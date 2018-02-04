@@ -59,7 +59,7 @@ exports.compilerArray = [
     ["lua", "file.lua", "", "Lua", ""], // done
     ["luna", "file.luna", "", "Luna", ""], // later
     ["\'nim compile\'", "file.nim", " /usercode/file", "Nim", ""], // done
-    ["ocaml", "file.ml", "", "OCaml", ""], // done
+    ["ocaml", "file.ml", "", "Ocaml", ""], // done
     ["octave", "file.m", "", "Octave", ""], // done
     ["opal", "file.opal", "", "Opal", ""], // later
     ["pc", "file.pas", " /usercode/file", "Pascal", ""], // done
