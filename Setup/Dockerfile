@@ -243,3 +243,19 @@ RUN \
 # TypeScript
 
 RUN npm install -g typescript
+
+# Elixir encoding
+
+RUN apt-get update && apt-get install -y --no-install-recommends locales
+RUN export LANG=en_US.UTF-8 \
+    && echo $LANG UTF-8 > /etc/locale.gen \
+    && locale-gen \
+    && update-locale LANG=$LANG
+ENV LANG "en_US.UTF-8"
+ENV LC_COLLATE "en_US.UTF-8"
+ENV LC_CTYPE "en_US.UTF-8"
+ENV LC_MESSAGES "en_US.UTF-8"
+ENV LC_MONETARY "en_US.UTF-8"
+ENV LC_NUMERIC "en_US.UTF-8"
+ENV LC_TIME "en_US.UTF-8"
+ENV LC_ALL "en_US.UTF-8"

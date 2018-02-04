@@ -45,23 +45,23 @@ exports.compilerArray = [
     ["\'gdc -o /usercode/a.out\'", "file.d", "/usercode/a.out", "D", ""], // done
     ["dart", "file.dart", "", "Dart", ""], // done
     ["emacs --script", "file.lisp", "", "Emacslisp", ""], // done
-    ["elixir", "file.exs", "", "Elixir", ""], // todo
+    ["elixir", "file.exs", "", "Elixir", ""], // done
     ["erlang", "file.erl", "", "Erlang", ""], // todo
     // F# support an interpreted mode with fsharpi
     ["f#", "file.fs", "", "F#", ""], // todo
     ["f95", "file.f", "/usercode/file", "Fortran", ""], // done
     ["groovy", "file.groovy", "", "Groovy", ""], // done
     ["hhvm", "file.php", "", "Hack", ""], // todo
-    ["ghci", "file.hs", "", "Haskell", ""], // todo
+    ["runghc", "file.hs", "", "Haskell", ""], // done
     ["julia", "file.jl", "", "Julia", ""], // done
     ["/root/.sdkman/candidates/kotlin/current/bin/kotlinc-jvm -src main.kt -jar main.jar", "main.kt", 'java -cp "kotlinc/lib/*:main.jar" namespace', "Kotlin", ""],     // kotlinc is a repl
-    ["logo", "file.logo", "", "Logo", ""], // todo
+    ["logo", "file.logo", "", "Logo", ""], // later
     ["lua", "file.lua", "", "Lua", ""], // done
-    ["luna", "file.luna", "", "Luna", ""], // todo
+    ["luna", "file.luna", "", "Luna", ""], // later
     ["\'nim compile\'", "file.nim", "/usercode/file", "Nim", ""], // done
     ["ocaml", "file.ml", "", "Ocaml", ""], // done
     ["octave", "file.m", "", "Octave", ""], // done
-    ["opal", "file.opal", "", "Opal", ""], // todo
+    ["opal", "file.opal", "", "Opal", ""], // later
     ["pc", "file.pas", "/usercode/file", "Pascal", ""], // done
     ["prolog", "file.prolog", "", "Prolog", ""],
     ["pypy", "file.py", "", "PyPy", ""],
