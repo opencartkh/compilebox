@@ -48,7 +48,7 @@ exports.compilerArray = [
     ["elixir", "file.exs", "", "Elixir", ""], // done
     ["erlang", "file.erl", "", "Erlang", ""], // todo
     // F# support an interpreted mode with fsharpi
-    ["f#", "file.fs", "", "F#", ""], // todo
+    ["fsharpc", "file.fs", "mono /usercode/file.exe", "F#", ""], // todo
     ["f95", "file.f", "/usercode/file", "Fortran", ""], // done
     ["groovy", "file.groovy", "", "Groovy", ""], // done
     ["hhvm", "file.php", "", "Hack", ""], // todo
