@@ -50,11 +50,11 @@ exports.compilerArray = [
     // F# support an interpreted mode with fsharpi
     ["fsharpc", "file.fs", "\'mono /usercode/file.exe\'", "F#", ""], // todo
     ["f95 ", "file.f", " /usercode/a.out", "Fortran", ""], // done
-    ["/root/.sdkman/candidates/groovy/current/bin/groovy ", "file.groovy", "", "Groovy", ""], // done
+    ["groovy ", "file.groovy", "", "Groovy", ""], // done
     ["hhvm", "file.php", "", "Hack", ""], // todo
     ["runghc", "file.hs", "", "Haskell", ""], // done
     ["julia", "file.jl", "", "Julia", ""], // done
-    ["/root/.sdkman/candidates/kotlin/current/bin/kotlinc-jvm -src main.kt -jar main.jar", "main.kt", 'java -cp "kotlinc/lib/*:main.jar" namespace', "Kotlin", ""],     // kotlinc is a repl
+    ["/y/bin/kotlinc-jvm -src main.kt -jar main.jar", "main.kt", 'java -cp "kotlinc/lib/*:main.jar" namespace', "Kotlin", ""],     // kotlinc is a repl
     ["logo", "file.logo", "", "Logo", ""], // later
     ["lua", "file.lua", "", "Lua", ""], // done
     ["luna", "file.luna", "", "Luna", ""], // later

@@ -156,15 +156,9 @@ RUN cabal update
 # Kotlin, Groovy
 # https://hub.docker.com/r/rayyildiz/kotlin/~/dockerfile/
 
-LABEL       KOTLIN_VERSION="1.2.10"
-
-ENV         KOTLIN_VERSION=1.2.10 \
-            KOTLIN_HOME=/usr/local/kotlin
-
-# Added
-RUN         curl "https://get.sdkman.io" | bash
-RUN         bash -c 'source "/root/.sdkman/bin/sdkman-init.sh" && sdk install kotlin'
-RUN         bash -c 'source "/root/.sdkman/bin/sdkman-init.sh" && sdk install groovy'
+RUN apt-get install -y groovy
+RUN apt install -y ubuntu-make
+RUN yes | umake kotlin
 
 # Lua
 # https://github.com/mhndev/docker-lua/blob/master/Dockerfile
