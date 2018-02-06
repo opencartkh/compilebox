@@ -46,7 +46,7 @@ exports.compilerArray = [
     ["dart", "file.dart", "", "Dart", ""], // done
     ["emacs --script", "file.lisp", "", "Emacslisp", ""], // done
     ["elixir", "file.exs", "", "Elixir", ""], // done
-    ["'erl -compile'", "main.erl", "'erl -pa /usercode -s main start -noshell -s init stop'", "Erlang", ""], // todo
+    ["'erlc -o /usercode'", "main.erl", "'erl -pa /usercode -s main start -noshell -s init stop'", "Erlang", ""], // done
     // F# support an interpreted mode with fsharpi
     ["\'fsharpc -o /usercode/file.exe --nologo\'", "file.fs", "\'mono /usercode/file.exe\'", "F#", ""], // done
     ["f95 ", "file.f", " /usercode/a.out", "Fortran", ""], // done
