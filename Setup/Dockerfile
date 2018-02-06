@@ -112,6 +112,7 @@ RUN apt-get install -y erlang
 RUN apt-get install -y elixir
 RUN apt-get install -y gfortran
 RUN apt-get install -y fsharp
+RUN apt-get install -y groovy
 RUN apt-get install -y hhvm # hack
 RUN apt-get install -y julia # also installed below, just in case
 RUN apt-get install -y nim
@@ -153,10 +154,8 @@ RUN apt-get install -y ghc-prof
 RUN apt-get install -y cabal-install
 RUN cabal update
 
-# Kotlin, Groovy
-# https://hub.docker.com/r/rayyildiz/kotlin/~/dockerfile/
+# Kotlin
 
-RUN apt-get install -y groovy
 RUN apt install -y ubuntu-make
 RUN yes | umake kotlin
 
@@ -238,3 +237,6 @@ RUN \
 
 RUN npm install -g typescript
 
+# Rexx
+
+RUN apt-get install -y regina-rexx
