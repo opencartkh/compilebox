@@ -19,6 +19,19 @@ In order to make starting up instances on autoscaling events faster, we do most 
 
 1. Find the latest default AMI being used for Elastic Beanstallk Node JS. You can find this by going to the EC2 dashboard in the AWS web console, clicking on Amazon Machine Images, switching to "Public" and searching for nodejs-hvm. Choose the one with the latest date and start up a new instance (t2.large) based on that AMI. Not that it is import to select an HVM instance and not a paravirtualization instance, in order to be able to use all instance types.
 
+Detailed steps
+----
+
+- https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Images:visibility=public-images;search=nodejs-hvm;sort=desc:name
+- Find the most recent AMI
+- Launch
+- "t2 large"
+- Next
+- Add storage: 20 GiB
+- Launch
+- will.pem
+- Once it's ready, "Connect"
+
 2. Once the new instance starts up, we can begin installing software. Start by setting up the epel yum repository:
 
 sudo yum-config-manager --enable epel
