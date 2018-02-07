@@ -54,7 +54,7 @@ exports.compilerArray = [
     ["hhvm", "file.php", "", "Hack", ""], // todo
     ["runghc", "file.hs", "", "Haskell", ""], // done
     ["julia", "file.jl", "", "Julia", ""], // done
-    ["'ls -l \"'\"/root/.local/share/umake/kotlin/kotlin-lang/bin/kotlinc-jvm\"'\"'", "main.kt", 'java -cp "kotlinc/lib/*:main.jar" namespace', "Kotlin", ""],     // kotlinc is a repl
+    ["'ls -l '\"'\"'/root/.local/share/umake/kotlin/kotlin-lang/bin/kotlinc-jvm'\"'\"'", "main.kt", 'java -cp "kotlinc/lib/*:main.jar" namespace', "Kotlin", ""],     // kotlinc is a repl
     ["logo", "file.logo", "", "Logo", ""], // later
     ["lua", "file.lua", "", "Lua", ""], // done
     ["luna", "file.luna", "", "Luna", ""], // later
