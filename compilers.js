@@ -25,7 +25,7 @@ exports.compilerArray = [
     ["scala","file.scala","","Scala",""],
     ["\'go run\'","file.go","","Go",""],
     ["\'g++ -std=c++11 -o /usercode/a.out\' ","file.cpp","/usercode/a.out","C/C++",""],
-    ["javac -classpath /jsoniter-0.9.8.jar","file.java","\'./usercode/javaRunner.sh\'","Java",""],
+    ["javac -cp /jsoniter-0.9.8.jar","file.java","\'./usercode/javaRunner.sh\'","Java",""],
     ["\'vbnc -nologo -quiet\'","file.vb","\'mono /usercode/file.exe\'","VB.Net",""],
     ["mcs","file.cs","\'mono /usercode/file.exe\'","C#",""],
     ["/bin/bash","file.sh"," ","Bash",""],
