@@ -112,6 +112,7 @@ RUN apt-get install -y erlang
 RUN apt-get install -y elixir
 RUN apt-get install -y gfortran
 RUN apt-get install -y fsharp
+RUN apt-get install -y groovy
 RUN apt-get install -y hhvm # hack
 RUN apt-get install -y julia # also installed below, just in case
 RUN apt-get install -y nim
@@ -153,18 +154,10 @@ RUN apt-get install -y ghc-prof
 RUN apt-get install -y cabal-install
 RUN cabal update
 
-# Kotlin, Groovy
-# https://hub.docker.com/r/rayyildiz/kotlin/~/dockerfile/
+# Kotlin
 
-LABEL       KOTLIN_VERSION="1.2.10"
-
-ENV         KOTLIN_VERSION=1.2.10 \
-            KOTLIN_HOME=/usr/local/kotlin
-
-# Added
-RUN         curl "https://get.sdkman.io" | bash
-RUN         bash -c 'source "/root/.sdkman/bin/sdkman-init.sh" && sdk install kotlin'
-RUN         bash -c 'source "/root/.sdkman/bin/sdkman-init.sh" && sdk install groovy'
+RUN apt install -y ubuntu-make
+RUN yes '/root/.local/share/umake/kotlin/kotlin-lang' | umake kotlin
 
 # Lua
 # https://github.com/mhndev/docker-lua/blob/master/Dockerfile
@@ -244,7 +237,23 @@ RUN \
 
 RUN npm install -g typescript
 
-# JSON for Java
+# Rexx
 
-RUN wget 'http://central.maven.org/maven2/com/jsoniter/jsoniter/0.9.8/jsoniter-0.9.8.jar'
+RUN apt-get update
+RUN apt-get install -y regina-rexx
 
+# Elixir encoding
+
+RUN apt-get update && apt-get install -y --no-install-recommends locales
+RUN export LANG=en_US.UTF-8 \
+    && echo $LANG UTF-8 > /etc/locale.gen \
+    && locale-gen \
+    && update-locale LANG=$LANG
+ENV LANG "en_US.UTF-8"
+ENV LC_COLLATE "en_US.UTF-8"
+ENV LC_CTYPE "en_US.UTF-8"
+ENV LC_MESSAGES "en_US.UTF-8"
+ENV LC_MONETARY "en_US.UTF-8"
+ENV LC_NUMERIC "en_US.UTF-8"
+ENV LC_TIME "en_US.UTF-8"
+ENV LC_ALL "en_US.UTF-8"
