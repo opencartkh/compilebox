@@ -45,26 +45,26 @@ exports.compilerArray = [
     ["\'gdc -o /usercode/a.out\'", "file.d", "/usercode/a.out", "D", ""], // done
     ["dart", "file.dart", "", "Dart", ""], // done
     ["emacs --script", "file.lisp", "", "Emacslisp", ""], // done
-    ["elixir", "file.exs", "", "Elixir", ""], // todo
-    ["erlang", "file.erl", "", "Erlang", ""], // todo
+    ["elixir", "file.exs", "", "Elixir", ""], // done
+    ["'erlc -o /usercode'", "main.erl", "'erl -pa /usercode -s main start -noshell -s init stop'", "Erlang", ""], // done
     // F# support an interpreted mode with fsharpi
-    ["f#", "file.fs", "", "F#", ""], // todo
-    ["f95", "file.f", "/usercode/file", "Fortran", ""], // done
-    ["groovy", "file.groovy", "", "Groovy", ""], // done
+    ["\'fsharpc -o /usercode/file.exe --nologo\'", "file.fs", "\'mono /usercode/file.exe\'", "F#", ""], // done
+    ["f95 ", "file.f", " /usercode/a.out", "Fortran", ""], // done
+    ["groovy ", "file.groovy", "", "Groovy", ""], // done
     ["hhvm", "file.php", "", "Hack", ""], // todo
-    ["ghci", "file.hs", "", "Haskell", ""], // todo
+    ["runghc", "file.hs", "", "Haskell", ""], // done
     ["julia", "file.jl", "", "Julia", ""], // done
-    ["/root/.sdkman/candidates/kotlin/current/bin/kotlinc-jvm -src main.kt -jar main.jar", "main.kt", 'java -cp "kotlinc/lib/*:main.jar" namespace', "Kotlin", ""],     // kotlinc is a repl
-    ["logo", "file.logo", "", "Logo", ""], // todo
+    ["'ls -l \"/root/.local/share/umake/kotlin/kotlin-lang/bin/kotlinc-jvm\" && exit 1'", "main.kt", 'java -cp "kotlinc/lib/*:main.jar" namespace', "Kotlin", ""],     // kotlinc is a repl
+    ["logo", "file.logo", "", "Logo", ""], // later
     ["lua", "file.lua", "", "Lua", ""], // done
-    ["luna", "file.luna", "", "Luna", ""], // todo
-    ["\'nim compile\'", "file.nim", "/usercode/file", "Nim", ""], // done
-    ["ocaml", "file.ml", "", "Ocaml", ""], // todo
+    ["luna", "file.luna", "", "Luna", ""], // later
+    ["\'nim compile\'", "file.nim", " /usercode/file", "Nim", ""], // done
+    ["ocaml", "file.ml", "", "Ocaml", ""], // done
     ["octave", "file.m", "", "Octave", ""], // done
-    ["opal", "file.opal", "", "Opal", ""], // todo
-    ["pc", "file.pas", "/usercode/file", "Pascal", ""], // done
+    ["opal", "file.opal", "", "Opal", ""], // later
+    ["pc", "file.pas", " /usercode/file", "Pascal", ""], // done
     ["prolog", "file.prolog", "", "Prolog", ""],
-    // pypy
+    ["pypy", "file.py", "", "PyPy", ""],
     ["racket --script", "file.rkt", "", "Racket", ""], // done
     ["gst", "file.st", "", "Smalltalk", ""], // done
     ["tclsh", "file.tcl", "", "Tcl", ""], // done

@@ -88,7 +88,7 @@ DockerSandbox.prototype.prepare = function(success)
                         if (err) 
                         {
                             console.log(err);
-                        }    
+                        }
                         else
                         {
                             console.log("Input file was saved!");
