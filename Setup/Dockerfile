@@ -261,3 +261,14 @@ ENV LC_ALL "en_US.UTF-8"
 # JSON for Java
 
 RUN wget 'http://central.maven.org/maven2/com/jsoniter/jsoniter/0.9.8/jsoniter-0.9.8.jar'
+
+# JSON for Common Lisp
+
+RUN sudo apt-get update && sudo apt-get install cl-quicklisp
+RUN printf '(load #p"/usr/share/cl-quicklisp/quicklisp.lisp") \n\
+(quicklisp-quickstart:install) \n\
+(ql:add-to-init-file) \n\
+\n\
+\n\
+(ql:quickload "yason") \n\
+' | clisp
